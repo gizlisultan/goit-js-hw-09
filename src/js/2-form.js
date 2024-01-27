@@ -13,20 +13,21 @@ getInfo();
 function infoSubmit(evt) {
     evt.preventDefault();
  
-    const email = evt.currentTarget.email.value;
-    const message = evt.currentTarget.message.value;
+    const email = evt.currentTarget.email.value.trim();
+    const message = evt.currentTarget.message.value.trim();
   if (email === "" || message === "") {
     alert("Please fill in all the fields!");
     return;
     }
-    JSON.stringify(localStorage.removeItem(STORAGE_KEY)),
+    console.log(JSON.parse(localStorage.getItem(STORAGE_KEY)))
+    localStorage.removeItem(STORAGE_KEY)
     evt.currentTarget.reset()
 }
 
 function infoInput(evt) {
     const formInputs = {}
-    formInputs.email = evt.currentTarget.email.value;
-    formInputs.message = evt.currentTarget.message.value;
+    formInputs.email = evt.currentTarget.email.value.trim();
+    formInputs.message = evt.currentTarget.message.value.trim();
     
     localStorage.setItem(STORAGE_KEY, JSON.stringify(formInputs))
    
