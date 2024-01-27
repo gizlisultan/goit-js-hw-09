@@ -1,0 +1,33 @@
+html {
+  width: 100%;
+}
+.gallery {
+  display: flex;
+  width: 1440px;
+  height: 696px;
+  padding: 24px 156px;
+  flex-wrap: wrap;
+  gap: 24px;
+  list-style: none;
+  justify-content: center;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+li.gallery-item {
+  width: 360px;
+  height: 200px;
+}
+
+img.gallery-image {
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+img.gallery-image:hover {
+  cursor: pointer;
+}
+.original-img {
+  width: 1112px;
+  height: 640px;
+}

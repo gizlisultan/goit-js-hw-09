@@ -1,3 +1,6 @@
+import SimpleLightbox from 'simplelightbox';
+import 'simplelightbox/dist/simple-lightbox.min.css';
+
 const images = [
   {
     preview:
@@ -64,6 +67,8 @@ const images = [
   },
 ];
 
+
+
 function imgGallery(images) {
     return images.map(({preview,original,description}) => {
         return `
@@ -81,9 +86,8 @@ const galleryMarkup = imgGallery(images);
 const gallery = document.querySelector(".gallery");
 
 gallery.insertAdjacentHTML("beforeend", galleryMarkup);
-
-const galleryLink = document.querySelectorAll(".gallery-link")
-
-
-const galleryItem = document.querySelectorAll(".gallery-item");
+const galleryModal = new SimpleLightbox('.gallery a', {
+  captionsData: 'alt',
+  captionDelay: 250,
+});
 
